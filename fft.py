@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from timeit import default_timer as timer
 
 def DFT(input):
     input = np.asarray(input, dtype=np.float32)
@@ -53,7 +54,15 @@ plt.plot(t, x, label='noisy', color = 'mediumvioletred', linewidth = 2)
 plt.xlim(t[0], t[-1])
 plt.show()
 
-xhat = FFT(x)
+start = timer()
+xdft= DFT(x)
+end = timer()
+print("The execution time with DFT was: ", (end-start))
+
+start = timer()
+xhat= FFT(x)
+end = timer()
+print("The execution time with FFT was: ", (end-start))
 psd = xhat * np.conj(xhat)/ sampling_rate
 freq = t * sampling_rate
 L = np.arange(1, np.floor(sampling_rate/2), dtype=int)
