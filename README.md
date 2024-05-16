@@ -1,4 +1,4 @@
-# ECA_Seminar
+# Seminar on Efficient Computational Algorithms
 
 The _FFT.py_ file executes both DFT and FFT and times the functions to compare how the execution times of the functions may vary. It uses the output of the FFT to plot the transformed functions in the frequency domain and then passes this through a low pass filter to remove the noise. This denoised signal is inverse-transformed back to the spatial domain to get the independent sine and cosine functions. 
 
